@@ -1,0 +1,242 @@
+* {
+    box-sizing: border-box;
+    /*Includes padding and border is elements' dimensions.*/
+}
+
+body {
+    margin: 0; /*Otherwise there is margin around everything.*/
+    overflow-x: hidden;
+}
+
+.text {
+    color: white;
+    font-family: 'Heebo', sans-serif;
+}
+
+:root {
+    --navbar-height: 60px;
+    --page-height: calc(100vh - var(--navbar-height));
+    --main-margin-top: calc(100vh - var(--navbar-height));
+}
+
+#navbar-container {
+    border: 1px solid #583b3b;
+    background: #b14744;
+    width: 100vw;
+    height: var(--navbar-height);
+    position: sticky;
+    top: 0;
+    z-index: 200;
+    display: flex; /*Children fills height*/
+    justify-content: right; /*Horizontal*/
+}
+
+    #navbar {
+        border: none;
+        display: flex;
+        align-items: center; /*Vertical*/
+        gap: 40px; /*Inner spacing*/
+        margin-right: 50px; /*Outer spacing*/
+    }
+
+        .navlink {
+            text-decoration: none;
+            color: white;
+            font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+            font-size: 1.5rem;
+            font-weight: 500;
+        }
+
+header {
+    border: none;
+    background:#36454f;
+    height: 100vh;
+    width: 100vw;
+    position: absolute;
+    top: 0;
+}
+
+    .anchor {
+        position: relative;
+        top: -60px; /*Same value as --navbar-height, but doesn't work if using var(--)*/
+    }
+
+    .text-container {
+        border: none;
+        color: white;
+        text-align: center;
+        font-family: 'Heebo', sans-serif;
+        padding: 0;
+    }
+
+    #header-top-half-container {
+        height: 50%;
+        display: flex;
+        align-items: flex-end;
+        justify-content: center;
+    }
+        
+        #header-title {
+            font-size: 4em;
+            margin: 0;
+        }
+
+    #header-bottom-half-container {
+        height: 50%;
+        display: flex;
+        align-items: flex-start;
+        justify-content: center;
+    }
+
+        #header-subtitle {
+            margin: 10px 0 0 0;
+            font-family: 'Open Sans', sans-serif;
+            font-size: 2em;
+        }
+
+main {
+    border: none;
+    background: #2e5577;
+    width: 100vw;
+    margin-top: var(--main-margin-top);
+    position: relative;
+}
+
+.section-container {
+    height: var(--page-height);
+    margin: 0;
+}
+
+    #projects-section-title {
+        border: none;
+        width: 100%;
+        text-align: center;
+        position: absolute;
+        top: 4px;
+        font-size: 3em;
+    }
+
+    #projects-container {
+        border: none;
+        display: flex;
+        align-items: center;
+        justify-content: space-around;
+        position: relative;
+        top: 25px;
+        margin: 0;
+    }
+
+        .project-tile {
+            border: none;
+            margin: 0 5px 0 0;
+            height: 400px;
+            width: 350px;
+            position: relative;
+            overflow: hidden;
+        }
+
+            :root {
+                --preview-caption-height: 65px;
+                --preview-image-height: calc(100% - var(--preview-caption-height));
+            }
+
+            .preview-image {
+                height: var(--preview-image-height);
+                width: 100%;
+                position: absolute;
+                z-index: 50;
+                /*Position needs to be absolute for the "under construction" effect
+                    Dunno why.*/
+            }
+
+            .preview-caption {
+                border: none;
+                background:#38384d;
+                position: absolute;
+                bottom: 0;
+                margin: 0;
+                width: 100%;
+                height: var(--preview-caption-height);
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                text-decoration: none;
+                font-family: 'Heebo', sans-serif;
+                font-size: 1.4em;
+                
+            }
+
+            .link {
+                text-decoration: none;
+                /*Interesting. Class .link is assigned to <a>, but affects any text
+                    contained within.*/
+            }
+
+            .under-construction-container {
+                border: none;
+                background: black;
+                opacity: 0.75;
+                height: 100%;
+                width: 100%;
+                position: absolute;
+                z-index: 100;
+            }
+
+                .under-construction-text {
+                    border: none;
+                    color: white;
+                    margin-top: 50%;
+                    font-size: 2em;
+                    font-family: 'Heebo', sans-serif;
+                    text-align: center;
+                    position: relative;
+                    z-index: 100;
+                }
+
+#contact-container {
+    border: none;
+    background: #465866;
+}
+            
+    #contact-section-top-half {
+        height: 50%;
+        display: flex;
+        align-items: flex-end;
+        justify-content: center;
+    }
+        #contact-section-title {
+            border: none;
+            width: 100%;
+            text-align: center;
+            font-size: 3em;
+            margin: 0;
+        }
+
+    #contact-section-bottom-half {
+        border: none;
+        height: 50%;
+        display: flex;
+        justify-content: center;
+        gap: 0 50px;
+    }
+        
+        .contact-section-subtitle {
+            border: none;
+            text-align: center;
+            margin: 20 0 0 0;
+        }
+
+    #footer {
+        border: none;
+        width: 100%;
+        height: 50px;
+        position: absolute;
+        bottom: 10px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
+
+    #footer-text {
+        color: white;
+    }
