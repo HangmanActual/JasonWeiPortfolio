@@ -220,6 +220,13 @@ main {
                     position: relative;
                     z-index: 100;
                 }
+
+            #beer-tribute-page-preview-image {
+            /*Temporary fix for smushed image;
+            not sure why it was getting smushed.*/
+                width: auto;
+                margin-left: -110px;
+            }
                 
 @media screen and (max-width: 800px) {
     #projects-container {
